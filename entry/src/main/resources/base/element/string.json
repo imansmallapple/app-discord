@@ -11,6 +11,10 @@
     {
       "name": "EntryAbility_label",
       "value": "WebApp"
+    },
+    {
+      "name": "permission_reason_microphone",
+      "value": "reason"
     }
   ]
 }

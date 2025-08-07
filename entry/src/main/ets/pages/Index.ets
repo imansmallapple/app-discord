@@ -1,7 +1,8 @@
-import webview from '@ohos.web.webview';
-import hilog from '@ohos.hilog';
 //import parameter from '@ohos.systemparameter'  => Deprecated API
 import  deviceInfo  from '@ohos.deviceInfo'
+import { webview } from '@kit.ArkWeb';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
 // no User Agent, test
 // https://tool.lu/useragent
 // Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36
@@ -39,7 +40,7 @@ struct Index {
 
       /* Load online web pages */
       //replace the url with the discord web
-      Web({ src: 'https://discord.com/channels/@me', controller: this.controller })
+      Web({ src: 'http://discord.com/channels/@me', controller: this.controller })
         .zoomAccess(false)
         .mediaPlayGestureAccess(true)
         .horizontalScrollBarAccess(false)
@@ -56,7 +57,7 @@ struct Index {
           methodList: ["test"],
           controller: this.controller,
         })
-        .userAgent(this.isPhone ? PHONE_USER_AGENT : PAD_USER_AGENT)
+        // .userAgent(this.isPhone ? PHONE_USER_AGENT : PAD_USER_AGENT)
         .onPageBegin((event) => {
           hilog.info(0x0, '[Index]', `onPageBegin= ${JSON.stringify(event)}`)
         })
