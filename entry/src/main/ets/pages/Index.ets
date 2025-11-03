@@ -29,7 +29,7 @@ struct Index {
       console.log("extObj.test: " + str);
       return "test " + str;
     }
-  };
+  }
   @State isPhone: boolean = false
   controller: webview.WebviewController = new webview.WebviewController()
 
